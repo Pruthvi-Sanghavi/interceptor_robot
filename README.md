@@ -5,12 +5,21 @@ Implementation of kalman filter in C++
 #### Libraries
 - Eigen3. Check it using ```pkg-config --modversion eigen3```
 
-#### cmake file
+#### Notes
+
+##### cmake
+
 ```cmake_minimum_required``` - Sets the required version of the cmake for the project.\
 ```project()``` - Sets the name of the project, and stores it in the variable PROJECT_NAME. When called from the top-level CMakeLists.txt also stores the project name in the variable CMAKE_PROJECT_NAME.\
 ```set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")``` Set the compiler option to C++11\
 
-#### Notes
+```
+set(SOURCE_FILES kalman.cpp kalman-test.cpp)
+add_executable(kalman-test ${SOURCE_FILES})
+```
+Setting multiple source files for compilation.
+
+##### C++
 
 ```#include <Eigen/Dense>``` - The Eigen/Dense header file defines all member functions for the MatrixXd type and related types (see also the table of header files). All classes and functions defined in this header file (and other Eigen header files) are in the Eigen namespace.
 
@@ -22,6 +31,14 @@ Implementation of kalman filter in C++
 
 - Default Constructor: The default constructor is the constructor that takes no parameters, and it is special because it is called when an object is declared but is not initialized with any arguments.
 
+- Function Overloading (Overloaded Functions): In C++, two different functions can have the same name if their parameters are different; either because they have a different number of parameters, or because any of their parameters are of a different type. Note that a function cannot be overloaded only by its return type. At least one of its parameters must have a different type.
+
+- There is also a concept of function template which we will look at later.
+
+- Member Initialization: When a constructor is used to initialize other members, these other members can be initialized directly, without resorting to statements in its body. This is done by inserting, before the constructor's body, a colon (:) and a list of initializations for class members.\
+Example: ```Rectangle::Rectangle (int x, int y) : width(x), height(y) { }```
 
 
 
+#### References
+1. http://www.cplusplus.com/doc/tutorial/classes/
