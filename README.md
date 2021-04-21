@@ -45,6 +45,8 @@ Example: ```Rectangle::Rectangle (int x, int y) : width(x), height(y) { }```
 
 - Different constructors are overloaded to initialize different values. For this code I have not included all the constructors in the source file.
 
+- ```int main(int argc, char* argv[])```: argc is the number of arguments being passed into your program from the command line and argv is the array of arguments.
+
 
 #### References
 1. http://www.cplusplus.com/doc/tutorial/classes/
