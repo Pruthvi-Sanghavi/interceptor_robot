@@ -19,15 +19,15 @@ public:
 		const Eigen::MatrixXd& P
 		); // Here Eigen is a namespace (like std)
 
-	KalmanFilter();
+	// KalmanFilter();
 
 	// Initialization
-	void init();
+	// void init();
 	void init(double t0, const Eigen::VectorXd& x0); // Function Overloading
 
 	// Update
 	void update(const Eigen::VectorXd& y);
-	void update(const Eigen::VectorXd& y, double dt, const Eigen::MatrixXd& A); // Function Overloading
+	// void update(const Eigen::VectorXd& y, double dt, const Eigen::MatrixXd& A); // Function Overloading
 
 	Eigen::VectorXd state() {return x_hat;};
 
